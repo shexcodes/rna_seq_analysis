@@ -1,0 +1,9 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base >=4.2
+  - bioconductor-clusterprofiler >=4.6
+  - bioconductor-org.hs.eg.db        # organism DB — must match your organism
+  - bioconductor-enrichplot
+  - r-ggplot2

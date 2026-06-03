@@ -1,0 +1,22 @@
+name: rnaseq
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python >=3.9
+  - snakemake-minimal >=7.25
+  - fastqc =0.12
+  - flexbar =3.5
+  - star =2.7.10b
+  - subread =2.0.3
+  - samtools >=1.17
+  - multiqc >=1.14
+  - r-base >=4.2
+  - bioconductor-deseq2 >=1.38
+  - bioconductor-apeglm
+  - r-ggplot2
+  - r-pheatmap
+  - r-rcolorbrewer
+  - bioconductor-clusterprofiler >=4.6
+  - bioconductor-org.hs.eg.db
+  - bioconductor-enrichplot

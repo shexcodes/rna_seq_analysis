@@ -1,0 +1,33 @@
+# ---------- OS / editor ----------
+.DS_Store
+.idea/
+.vscode/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# ---------- Snakemake pipeline (pipeline/) ----------
+pipeline/.snakemake/
+pipeline/results/
+pipeline/logs/
+pipeline/resources/*.fa
+pipeline/resources/*.fasta
+pipeline/resources/*.gtf
+pipeline/resources/*.gff
+pipeline/resources/reads/*
+!pipeline/resources/reads/.gitkeep
+*.bam
+*.bai
+*.sam
+
+# ---------- Notebook analysis (notebook/) ----------
+notebook/results/

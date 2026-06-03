@@ -1,0 +1,13 @@
+# RNA-Seq downstream analysis notebook — Python dependencies
+# Install with:  pip install -r requirements.txt
+pandas==2.3.3
+numpy==2.4.4
+matplotlib==3.10.8
+seaborn==0.13.2
+scikit-learn==1.8.0
+scipy==1.17.1
+pydeseq2==0.5.4
+gseapy==1.2.1
+# Notebook environment
+jupyterlab==4.5.7
+ipykernel==7.2.0

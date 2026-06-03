@@ -1,0 +1,7 @@
+sample	condition	fq1	fq2
+G1_rep1	G1	resources/reads/G1_rep1_read1.fastq.gz	resources/reads/G1_rep1_read2.fastq.gz
+G1_rep2	G1	resources/reads/G1_rep2_read1.fastq.gz	resources/reads/G1_rep2_read2.fastq.gz
+G1_rep3	G1	resources/reads/G1_rep3_read1.fastq.gz	resources/reads/G1_rep3_read2.fastq.gz
+G2_rep1	G2	resources/reads/G2_rep1_read1.fastq.gz	resources/reads/G2_rep1_read2.fastq.gz
+G2_rep2	G2	resources/reads/G2_rep2_read1.fastq.gz	resources/reads/G2_rep2_read2.fastq.gz
+G2_rep3	G2	resources/reads/G2_rep3_read1.fastq.gz	resources/reads/G2_rep3_read2.fastq.gz

@@ -1,0 +1,52 @@
+# =====================================================================
+#  RNA-Seq pipeline configuration
+#  Edit this file to point at your data and tune parameters.
+# =====================================================================
+
+# Sample sheet (TSV). Columns: sample, condition, fq1, fq2
+samples: config/samples.tsv
+
+# Reference files — place these in resources/ (see resources/README.md)
+reference:
+  genome:     resources/genome.fa
+  annotation: resources/annotation.gtf
+  adapters:   resources/illumina_adapter.fa
+
+params:
+  star:
+    # For small genomes STAR needs a reduced value:
+    # min(14, log2(genomeLength)/2 - 1). The teaching dataset
+    # (human chr22 + ERCC spike-ins) uses 11.
+    sa_index_nbases: 11
+    # (max read length - 1). 99 suits 100 bp reads; adjust to your data.
+    sjdb_overhang: 99
+  flexbar:
+    pre_trim_left: 13         # remove the first 13 bases of every read (-x)
+    adapter_min_overlap: 7
+    min_read_length: 25
+  featurecounts:
+    feature_type: exon        # -t
+    attribute: gene_id        # -g  (use gene_name for readable IDs)
+
+threads:
+  star: 4
+  flexbar: 4
+  featurecounts: 4
+
+deseq2:
+  # contrast: [factor, level_of_interest, reference_level]
+  # results are reported as level_of_interest vs reference_level
+  contrast: ["condition", "G2", "G1"]
+  alpha: 0.05                 # adjusted p-value cutoff
+  lfc_threshold: 1.0          # |log2 fold-change| cutoff for significance
+  top_n_heatmap: 30
+
+enrichment:
+  # Bioconductor organism annotation package (must match your organism)
+  orgdb: org.Hs.eg.db
+  kegg_organism: hsa          # KEGG organism code (hsa = human)
+  # keytype of the IDs in the count matrix — must match params.featurecounts.attribute
+  gene_id_type: ENSEMBL       # ENSEMBL for gene_id; use SYMBOL for gene_name
+  go_ontology: ALL            # BP, MF, CC, or ALL
+  qvalue_cutoff: 0.05
+  show_categories: 10
