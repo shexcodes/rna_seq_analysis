@@ -6,7 +6,7 @@ and executed in one notebook.
 
 This is the interactive companion to the `rnaseq-snakemake` pipeline, which
 produces the count matrix from raw reads (FastQC → flexbar → STAR →
-featureCounts). The two together cover a complete RNA-Seq workflow.
+featureCounts). The two together cover a complete RNA-Seq workflow!
 
 ## Contents
 
